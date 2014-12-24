@@ -59,6 +59,9 @@ Update the version number in ``setup.py``.
 If releasing ``django-cities-light``, update the ``VERSION``
 variable in ``cities_light/__init__.py``.
 
+Propagate the release on internet
+=================================
+
 ``python setup.py sdist``
 -------------------------
 
