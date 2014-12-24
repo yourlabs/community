@@ -4,36 +4,92 @@ Release Guidelines
 This document explains how to release an app
 maintained on https://github.com/yourlabs
 
-Tests
-=====
+``[ci skip]`` in commit messages to save Travis-ci
+==================================================
+
+Travis-ci gratefully runs our tests. If a commit doesn't change
+any code, it should contain ``[ci skip]`` in the commit message so
+that it doesn't trigger travis-ci build which takes quite a while
+- let's be good neighbours.
+
+``tests/`` needs new tests for new bugfix and feature
+=====================================================
+
+``tests/`` should contain new unit tests for new features and regression tests
+for bugfixes
 
 Ensure all tests pass on all platforms, use travis-ci for
 that purpose.
 
-Version bump
-============
+``docs/`` needs love
+====================
 
-Update the version number in ``docs/(source/)?conf.py``
-and setup.py, eventually in ``module_root/__init__.py``
-if it defines a ``VERSION`` string.
+Ensure all supported feature is documented in the ``docs/source/``
+directory.
 
-Add new authors to ``AUTHORS``, in alphabetical order.
+``CHANGELOG`` should describe the release changes
+=================================================
 
-Update ``CHANGELOG``.
+Ensure that the ``CHANGELOG`` file is up to date, use ``git log``
+to double check the consistency between ``CHANGELOG`` and git.
+
+``AUTHORS`` should be legally valid
+===================================
+
+Welcome to ``AUTHORS``, contributors are listed in alphabetical
+order, use ``git log`` to double check the author list since last
+version bump.
+
+Version bump: update the version number in the following files
+==============================================================
+
+``docs/(source/)?conf.py``
+--------------------------
+
+Update the version number in ``docs/(source/)?conf.py``.
+
+``setup.py``
+------------
+
+Update the version number in ``setup.py``.
+
+``cities_light/__init__.py``
+----------------------------
+
+If releasing ``django-cities-light``, update the ``VERSION``
+variable in ``cities_light/__init__.py``.
+
+``python setup.py sdist``
+-------------------------
 
 Build the package::
 
     python setup.py sdist
 
+Check resulting ``build/``
+--------------------------
+
 Check that the package looks ok, it should be in ``build/``.
+
+Upload on PyPi ``python setup.py sdist upload``
+-----------------------------------------------
 
 Upload the package on PyPi::
 
     python setup.py sdist upload
 
-Tag the release with git tag, upload the tag, ie.::
+``git tag``
+-----------
+
+Tag the release with git tag, ie.::
 
     git tag 2.0.4
+
+``git push origin <version>``
+-----------------------------
+
+Upload the tag, ie::
+
     git push origin 2.0.4
 
 Thanks for your help !
