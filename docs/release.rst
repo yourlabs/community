@@ -59,27 +59,12 @@ Update the version number in ``setup.py``.
 If releasing ``django-cities-light``, update the ``VERSION``
 variable in ``cities_light/__init__.py``.
 
-Propagate the release on internet
-=================================
+Pre-release mandatory tests with GitHub and Travis-ci
+=====================================================
 
-``python setup.py sdist``
--------------------------
-
-Build the package::
-
-    python setup.py sdist
-
-Check resulting ``build/``
---------------------------
-
-Check that the package looks ok, it should be in ``build/``.
-
-Upload on PyPi ``python setup.py sdist upload``
------------------------------------------------
-
-Upload the package on PyPi::
-
-    python setup.py sdist upload
+It is important that all tests jobs pass in Travis. If a job in the matrix
+fails then read the logs of the job and eventually restart the job - you'll
+need to login with your github account on travis for that.
 
 ``git tag``
 -----------
@@ -95,4 +80,37 @@ Upload the tag, ie::
 
     git push origin 2.0.4
 
-Thanks for your help !
+Wait for Travis
+---------------
+
+Once all tests pass on travis then it's time to propagate on PyPi.
+
+``python setup.py sdist``
+-------------------------
+
+Build the package::
+
+    python setup.py sdist
+
+Check resulting ``build/``
+--------------------------
+
+Check that the package looks ok, it should be in ``build/``.
+
+Test it in a virtualenv in ``/tmp/testenv``
+-------------------------------------------
+
+Might help finding final bugs.
+
+Upload on PyPi ``python setup.py sdist upload``
+-----------------------------------------------
+
+Upload the package on PyPi::
+
+    python setup.py sdist upload
+
+Thanks for your contribution !
+==============================
+
+It's beyond my control: "l'outil appartient à celui qui le travaille" means
+"the tool belongs to whom works it".
