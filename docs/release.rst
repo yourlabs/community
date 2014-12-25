@@ -66,6 +66,11 @@ It is important that all tests jobs pass in Travis. If a job in the matrix
 fails then read the logs of the job and eventually restart the job - you'll
 need to login with your github account on travis for that.
 
+For example, if a test job runs a test server + selenium in a thread then it'll
+be a bit resource hungry, the job might fail because "Timed out while waiting
+for window to load". This is a typical case where we'd like to restart a job on
+travis.
+
 ``git tag``
 -----------
 
