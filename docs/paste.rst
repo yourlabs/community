@@ -19,6 +19,17 @@ Template for YourLabs core-dev to reply to unclear issues
 
 
 
+        Models (only paste relevant section):
+
+
+
+        autocomplete_light_registry (only paste relevant section):
+
+
+
+        javascript / html if relevant:
+
+
 
         How to reproduce this bug:
 
@@ -28,13 +39,20 @@ Template for YourLabs core-dev to reply to unclear issues
 
         Excepted result:
 
+
+
         Actual result:
 
-    If you want a almost garanteed fast answer, then also:
+
+
+    If you want a almost garanteed fast answer, then instead of pasting
+    Models/autocomplete_light_registry/javascript/html above, you could:
 
     - fork the repo,
     - reproduct your issue in a new, simple app in `autocomplete_light/example_apps`
     - it should be reproducible in `test_project/manage.py runserver`.
+
+    See details in community documentation: http://docs.yourlabs.org
 
     Thanks a lot for helping django-autocomplete-light better.
 
