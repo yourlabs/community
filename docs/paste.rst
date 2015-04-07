@@ -36,7 +36,7 @@ Template for YourLabs core-dev to reply to unclear issues
     - reproduct your issue in a new, simple app in `autocomplete_light/example_apps`
     - it should be reproducible in `test_project/manage.py runserver`.
 
-    Thanks a lot for your report.
+    Thanks a lot for helping django-autocomplete-light better.
 
     Sincerely
 
