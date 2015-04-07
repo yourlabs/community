@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 3
 
    guidelines
+   paste
    release
 
 
