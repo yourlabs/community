@@ -14,6 +14,7 @@ Contents:
    guidelines
    paste
    release
+   consulting
 
 
 Indices and tables
